@@ -1,0 +1,9 @@
+{
+  "name": "rumbo-matero-reservas",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Landing Rumbo Matero + endpoint de solicitud de reserva (Vercel serverless, mail vía Nitrosend/Resend).",
+  "engines": {
+    "node": ">=18"
+  }
+}
