@@ -1,9 +1,9 @@
 node_modules/
-.env
-.env.local
-.env*.local
-.vercel
 .DS_Store
-
 .vercel
-.env*
+
+# Variables de entorno (secretos) — no subir.
+.env
+.env.*
+# ...pero SÍ conservar la plantilla de ejemplo.
+!.env.example
