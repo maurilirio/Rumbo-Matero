@@ -24,7 +24,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Nunito:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-<noscript><style>.reveal,.reveal-l,.reveal-r,.slide-l,.slide-r,.essay-fade,.manifesto-item,.variedades li{opacity:1 !important;transform:none !important;}.hl{background-size:100% 42% !important;}</style></noscript>
+<noscript><style>.reveal,.reveal-l,.reveal-r,.slide-l,.slide-r,.essay-fade,.manifesto-item,.variedades li{opacity:1 !important;transform:none !important;}.hl{background-size:100% 50% !important;}</style></noscript>
 <style>
 /* ===================== TOKENS ===================== */
 :root {
@@ -258,8 +258,9 @@ h1, h2, h3, h4 { font-family: var(--font-serif); font-weight: 600; line-height: 
 .manifesto-item:first-child { border-top: none; padding-top: 4px; }
 .mi-kick { text-transform: uppercase; letter-spacing: .2em; font-size: .68rem; font-weight: 600; color: var(--tierra); font-variant-numeric: tabular-nums; }
 .mi-line { font-family: var(--font-serif); font-weight: 500; font-size: clamp(1.55rem, 3vw, 2.6rem); line-height: 1.08; color: var(--verde-oscuro); letter-spacing: -.02em; }
-.hl { background-image: linear-gradient(rgba(154,98,48,.20), rgba(154,98,48,.20)); background-repeat: no-repeat; background-position: 0 88%; background-size: 0% 38%; padding: 0 3px; margin: 0 -3px; color: var(--verde-oscuro); font-style: italic; transition: background-size .85s var(--ease) .3s; }
-.manifesto-item.in .hl { background-size: 100% 42%; }
+.mi-sub { color: var(--tinta-suave); font-size: 1rem; line-height: 1.55; max-width: 46ch; margin-top: 2px; }
+.hl { background-image: linear-gradient(rgba(154,98,48,.34), rgba(154,98,48,.34)); background-repeat: no-repeat; background-position: 0 90%; background-size: 0% 46%; padding: 0 3px; margin: 0 -3px; color: var(--verde-oscuro); font-style: italic; transition: background-size .85s var(--ease) .3s; }
+.manifesto-item.in .hl { background-size: 100% 50%; }
 /* Entrada más lenta y suave (menos desplazamiento) para no marear */
 .manifesto-item.slide-l, .manifesto-item.slide-r { transition-duration: 1.7s; }
 .manifesto-item.slide-l { transform: translateX(-40px); }
@@ -306,7 +307,15 @@ h1, h2, h3, h4 { font-family: var(--font-serif); font-weight: 600; line-height: 
 .familia-title h3 span { font-style: italic; font-weight: 400; color: var(--verde-yerba); }
 .familia-price { font-family: var(--font-serif); font-size: 1.15rem; color: var(--terracota); white-space: nowrap; font-variant-numeric: tabular-nums; }
 .familia-price em { font-style: normal; font-size: .82rem; color: var(--tinta-suave); }
-.familia-desc { color: var(--tinta-suave); margin-bottom: 22px; max-width: 480px; }
+.familia-desc { color: var(--tinta-suave); margin-bottom: 20px; max-width: 480px; }
+/* Perfil de cada familia: cuerpo (medidor), molienda, ideal para */
+.familia-meta { list-style: none; display: flex; flex-wrap: wrap; gap: 10px 28px; margin: 0 0 22px; padding: 16px 0; border-top: 1px dotted rgba(38,49,29,.18); border-bottom: 1px dotted rgba(38,49,29,.18); }
+.familia-meta li { display: flex; align-items: center; gap: 9px; }
+.fm-k { text-transform: uppercase; letter-spacing: .14em; font-size: .66rem; font-weight: 700; color: var(--tierra); }
+.fm-v { font-size: .92rem; font-weight: 600; color: var(--verde-medio); }
+.dots { display: inline-flex; gap: 5px; }
+.dots i { width: 9px; height: 9px; border-radius: 50%; border: 1.5px solid var(--verde-yerba); box-sizing: border-box; }
+.dots i.on { background: var(--verde-yerba); }
 .variedades { list-style: none; display: grid; gap: 2px; }
 .variedades li { display: flex; align-items: baseline; gap: 10px; padding: 9px 0; border-bottom: 1px dotted rgba(38,49,29,.16); }
 .variedades li:last-child { border-bottom: 0; }
@@ -504,7 +513,7 @@ h1, h2, h3, h4 { font-family: var(--font-serif); font-weight: 600; line-height: 
 @media (prefers-reduced-motion: reduce) {
   * { animation-duration: .001s !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; }
   .reveal, .reveal-l, .reveal-r, .slide-l, .slide-r, .essay-fade, .variedades li, .manifesto-item { opacity: 1 !important; transform: none !important; transition: none; }
-  .hl { background-size: 100% 42% !important; transition: none !important; }
+  .hl { background-size: 100% 50% !important; transition: none !important; }
   .hero-frame-img { animation: none; }
 }
 
@@ -594,10 +603,10 @@ h1, h2, h3, h4 { font-family: var(--font-serif); font-weight: 600; line-height: 
 
       <nav class="nav" id="nav" aria-label="Navegación principal">
         <a href="#nuestra-yerba">La yerba</a>
-        <a href="#quien-soy">Quién soy</a>
         <a href="#motivos">Por qué</a>
-        <a href="#origen">El origen</a>
         <a href="#yerbas">Nuestras yerbas</a>
+        <a href="#quien-soy">Quién soy</a>
+        <a href="#origen">El origen</a>
         <a href="#faq">Preguntas</a>
         <a href="#reserva">Reservá</a>
         <a href="#contacto" class="nav-cta" data-wa>WhatsApp</a>
@@ -631,8 +640,8 @@ h1, h2, h3, h4 { font-family: var(--font-serif); font-weight: 600; line-height: 
             <span class="reveal d2">de tu mate</span>
           </h1>
           <p class="hero-sub reveal d3">
-            Natural, sin agrotóxicos y con un sabor de verdad.
-            Una vez que la probás, no hay vuelta atrás.
+            Agroecológica, sin agrotóxicos y con el sabor real de la hoja.
+            La probás una vez y no hay vuelta atrás.
           </p>
           <div class="hero-cta reveal d4">
             <a href="#contacto" class="btn btn-cream" data-wa>
@@ -650,7 +659,7 @@ h1, h2, h3, h4 { font-family: var(--font-serif); font-weight: 600; line-height: 
     </div>
   </section>
 
-  <!-- ===================== NUESTRA YERBA ===================== -->
+  <!-- ===================== NUESTRA YERBA (intro / beneficio) ===================== -->
   <section class="section" id="nuestra-yerba">
     <div class="container split">
       <div class="split-collage">
@@ -665,61 +674,31 @@ h1, h2, h3, h4 { font-family: var(--font-serif); font-weight: 600; line-height: 
       </div>
       <div class="split-body">
         <p class="eyebrow reveal">Nuestra yerba</p>
-        <h2 class="reveal">La probás una vez<br />y no volvés atrás</h2>
+        <h2 class="reveal">El sabor real<br />de la hoja</h2>
         <p class="lead reveal">
-          Rumbo Matero nace de un cambio de hábito: dejar la yerba industrial y pasarte
-          a una <strong>agroecológica de verdad</strong>, sin agrotóxicos, que respeta
-          el monte y los tiempos de la planta.
+          Rumbo Matero nació de un cambio simple: dejar la yerba industrial y pasarse
+          a una <strong>agroecológica</strong>, sin agrotóxicos, que respeta el monte y
+          los tiempos de la planta.
         </p>
         <p class="reveal">
-          El resultado es un sabor limpio y redondo, con el carácter real de la hoja.
-          No la cultivamos: la elegimos, la mejor, y te la acercamos como se merece.
-          Menos intervención, más naturaleza en tu mate de todos los días.
+          El resultado es un mate limpio y redondo, con el carácter real de la hoja.
+          No la cultivamos: la elegimos con criterio y te la acercamos como se merece.
         </p>
         <ul class="tick-list reveal">
-          <li>Natural, sin agrotóxicos</li>
+          <li>Sin agrotóxicos</li>
           <li>Elaboración artesanal</li>
-          <li>Seleccionada hoja por hoja</li>
+          <li>Elegida con criterio</li>
         </ul>
       </div>
     </div>
   </section>
 
-  <!-- ===================== QUIÉN SOY ===================== -->
-  <section class="section quien" id="quien-soy">
-    <div class="container quien-grid">
-      <figure class="quien-photo reveal-l">
-        <img src="img/fundadora-feria.jpg" width="960" height="1280" alt="Sandra Ciccarelli, fundadora de Rumbo Matero, en su puesto de la feria" loading="lazy" />
-        <figcaption>Sandra Ciccarelli · fundadora de Rumbo Matero</figcaption>
-      </figure>
-      <div class="quien-body">
-        <p class="eyebrow reveal">Quién soy</p>
-        <h2 class="reveal">Hola, soy Sandra Ciccarelli</h2>
-        <p class="lead reveal">
-          Siempre cuidé lo que como y elegí lo natural como forma de vida. Un día, en
-          una feria, probé una <strong>yerba agroecológica de verdad</strong> y me
-          cambió el mate para siempre: un sabor limpio, natural, sin nada raro.
-        </p>
-        <p class="reveal">
-          Así nació <strong>Rumbo Matero</strong>: de las ganas de que más personas
-          puedan hacer ese mismo cambio de rumbo. No tengo un supermercado ni una
-          dietética —soy alguien de confianza que sabe de yerba, la elige con criterio
-          y te la acerca en persona, con tiempo y una charla de por medio.
-        </p>
-        <p class="reveal quien-firma">
-          Porque el mate no se apura: se disfruta, se comparte y, cuando encontrás
-          el bueno, no tiene vuelta atrás.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== MOTIVOS (editorial) ===================== -->
+  <!-- ===================== MOTIVOS (por qué el cambio · editorial) ===================== -->
   <section class="section motivos" id="motivos">
     <div class="container">
       <header class="motivos-head">
-        <p class="eyebrow reveal">Por qué elegirla</p>
-        <h2 class="reveal">No es una yerba más<br />Es otra forma de hacerla</h2>
+        <p class="eyebrow reveal">Por qué cambiar</p>
+        <h2 class="reveal">No es una yerba más.<br />Es otra forma de hacerla.</h2>
       </header>
 
       <div class="motivos-grid">
@@ -730,30 +709,149 @@ h1, h2, h3, h4 { font-family: var(--font-serif); font-weight: 600; line-height: 
 
         <div class="manifesto">
           <p class="manifesto-item slide-l">
-            <span class="mi-kick">01 — Sin acidez</span>
-            <span class="mi-line">Lo comprobás desde el <span class="hl">primer mate</span>.</span>
+            <span class="mi-kick">01 — Agroecológica</span>
+            <span class="mi-line">Sin <span class="hl">agrotóxicos</span>, del monte a tu mate.</span>
+            <span class="mi-sub">Producida cuidando el suelo, el agua y los tiempos de la planta.</span>
           </p>
           <p class="manifesto-item slide-r">
-            <span class="mi-kick">02 — Agroecológica de verdad</span>
-            <span class="mi-line">Sin <span class="hl">agrotóxicos</span>, cebada tras cebada.</span>
+            <span class="mi-kick">02 — El sabor</span>
+            <span class="mi-line">Suave y <span class="hl">redondo</span>, cebada tras cebada.</span>
+            <span class="mi-sub">Muchos nos cuentan que les cae mejor y sienten menos acidez que con la industrial.</span>
           </p>
           <p class="manifesto-item slide-l">
-            <span class="mi-kick">03 — Un sabor con historia</span>
-            <span class="mi-line"><span class="hl">De verdad</span>, no de fábrica.</span>
+            <span class="mi-kick">03 — Su origen</span>
+            <span class="mi-line">Nace en <span class="hl">Misiones</span>, la cuna del mate.</span>
+            <span class="mi-sub">Elegimos una yerba agroecológica que llega desde allá y la acercamos a Córdoba.</span>
           </p>
           <p class="manifesto-item slide-r">
-            <span class="mi-kick">04 — No cultivamos: elegimos</span>
-            <span class="mi-line">La mejor hoja, elegida con <span class="hl">criterio</span>.</span>
-          </p>
-          <p class="manifesto-item slide-l">
-            <span class="mi-kick">05 — Cercanía</span>
+            <span class="mi-kick">04 — Cercanía</span>
             <span class="mi-line">Cada cliente, con <span class="hl">nombre y cara</span>.</span>
-          </p>
-          <p class="manifesto-item slide-r">
-            <span class="mi-kick">06 — El punto de no retorno</span>
-            <span class="mi-line">La probás y <span class="hl">no volvés</span> a la industrial.</span>
+            <span class="mi-sub">Trato directo, sin intermediarios: nos escribís y coordinamos en persona.</span>
           </p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== NUESTRAS YERBAS (carta / variedades) ===================== -->
+  <section class="section yerbas" id="yerbas">
+    <div class="container">
+      <header class="yerbas-head">
+        <div class="reveal">
+          <p class="eyebrow">Nuestras yerbas</p>
+          <h2>Una carta agroecológica</h2>
+        </div>
+        <p class="yerbas-intro reveal">
+          Tres familias, según cómo se seca y se muele la hoja. Mirá el cuerpo de cada
+          una y elegí la que va con tu mate.
+        </p>
+      </header>
+
+      <!-- Familia 1 -->
+      <article class="familia reveal">
+        <figure class="familia-photo">
+          <img src="img/hoja-con-palo.jpg" width="1200" height="1600" alt="Yerba barbacuá con palo, molida" loading="lazy" />
+        </figure>
+        <div class="familia-body">
+          <div class="familia-title">
+            <h3>Barbacuá <span>con palo</span></h3>
+            <span class="familia-price">$7.200 – $7.400 <em>/ kg</em></span>
+          </div>
+          <p class="familia-desc">Secado a la barbacuá, con palo. La línea más clásica, con distintas moliendas y cortes de hierbas.</p>
+          <ul class="familia-meta">
+            <li><span class="fm-k">Cuerpo</span><span class="dots" aria-label="Intensidad media"><i class="on"></i><i class="on"></i><i></i></span></li>
+            <li><span class="fm-k">Molienda</span><span class="fm-v">Con palo · varias</span></li>
+            <li><span class="fm-k">Ideal para</span><span class="fm-v">El mate de todos los días</span></li>
+          </ul>
+          <ul class="variedades">
+            <li><span class="v-name">Tradicional</span><span class="v-dot"></span><span class="v-price">$7.200</span></li>
+            <li><span class="v-name">Tradicional entrefina</span><span class="v-dot"></span><span class="v-price">$7.200</span></li>
+            <li><span class="v-name">Tradicional con cedrón</span><span class="v-dot"></span><span class="v-price">$7.400</span></li>
+            <li class="v-off"><span class="v-name">Tradicional con cola de caballo</span><span class="v-dot"></span><span class="v-price">sin stock</span></li>
+            <li><span class="v-name">Canchada fina</span><span class="v-dot"></span><span class="v-price">$7.200</span></li>
+            <li><span class="v-name">Con hojas de naranja</span><span class="v-dot"></span><span class="v-price">$7.400</span></li>
+            <li><span class="v-name">Digestiva <small>· palta, marcela y té verde</small></span><span class="v-dot"></span><span class="v-price">$7.400</span></li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Familia 2 -->
+      <article class="familia familia-alt reveal">
+        <figure class="familia-photo">
+          <img src="img/hoja-despalada.jpg" width="900" height="1600" alt="Yerba barbacuá despalada, molida sin palo" loading="lazy" />
+        </figure>
+        <div class="familia-body">
+          <div class="familia-title">
+            <h3>Barbacuá <span>despalada</span></h3>
+            <span class="familia-price">$8.200 <em>/ kg</em></span>
+          </div>
+          <p class="familia-desc">Sin palo, secado a la barbacuá. Más limpia en el mate; de suave a intensa según la molienda.</p>
+          <ul class="familia-meta">
+            <li><span class="fm-k">Cuerpo</span><span class="dots" aria-label="Intensidad alta"><i class="on"></i><i class="on"></i><i class="on"></i></span></li>
+            <li><span class="fm-k">Molienda</span><span class="fm-v">Sin palo · gruesa a fina</span></li>
+            <li><span class="fm-k">Ideal para</span><span class="fm-v">Un mate más limpio e intenso</span></li>
+          </ul>
+          <ul class="variedades">
+            <li><span class="v-name">Gruesa <small>· suave</small></span><span class="v-dot"></span><span class="v-price">$8.200</span></li>
+            <li><span class="v-name">Mediana <small>· suave</small></span><span class="v-dot"></span><span class="v-price">$8.200</span></li>
+            <li><span class="v-name">Intensa fina</span><span class="v-dot"></span><span class="v-price">$8.200</span></li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Familia 3 -->
+      <article class="familia reveal">
+        <figure class="familia-photo">
+          <img src="img/paquete-hierbas.jpg" width="960" height="1280" alt="Yerba de secado tradicional, sin ahumar" loading="lazy" />
+        </figure>
+        <div class="familia-body">
+          <div class="familia-title">
+            <h3>Secado <span>tradicional</span></h3>
+            <span class="familia-price">$7.200 – $8.000 <em>/ kg</em></span>
+          </div>
+          <p class="familia-desc">Secado tradicional, con opciones sin ahumar. Un perfil más suave y natural.</p>
+          <ul class="familia-meta">
+            <li><span class="fm-k">Cuerpo</span><span class="dots" aria-label="Intensidad suave"><i class="on"></i><i></i><i></i></span></li>
+            <li><span class="fm-k">Molienda</span><span class="fm-v">Sin ahumar · suave</span></li>
+            <li><span class="fm-k">Ideal para</span><span class="fm-v">Quien busca lo más suave</span></li>
+          </ul>
+          <ul class="variedades">
+            <li><span class="v-name">Volvedora despalada <small>· suave</small></span><span class="v-dot"></span><span class="v-price">$8.000</span></li>
+            <li><span class="v-name">Tradicional sin ahumar</span><span class="v-dot"></span><span class="v-price">$7.200</span></li>
+            <li><span class="v-name">Entrefina sin ahumar</span><span class="v-dot"></span><span class="v-price">$7.200</span></li>
+          </ul>
+        </div>
+      </article>
+
+      <p class="yerbas-foot reveal">
+        Todos los precios son por kilo. Consultá presentaciones, packs y venta por mayor.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===================== QUIÉN SOY (historia de confianza) ===================== -->
+  <section class="section quien" id="quien-soy">
+    <div class="container quien-grid">
+      <figure class="quien-photo reveal-l">
+        <img src="img/fundadora-feria.jpg" width="960" height="1280" alt="Sandra Ciccarelli, fundadora de Rumbo Matero, en su puesto de la feria" loading="lazy" />
+        <figcaption>Sandra Ciccarelli · fundadora de Rumbo Matero</figcaption>
+      </figure>
+      <div class="quien-body">
+        <p class="eyebrow reveal">Quién soy</p>
+        <h2 class="reveal">Hola, soy Sandra</h2>
+        <p class="lead reveal">
+          Siempre elegí lo natural como forma de vida. Un día, en una feria, probé una
+          yerba agroecológica distinta y me cambió el mate: limpio, natural, sin nada raro.
+        </p>
+        <p class="reveal">
+          Así nació <strong>Rumbo Matero</strong>. No tengo un supermercado ni una
+          dietética: elijo la yerba con criterio y te la acerco en Córdoba —en las ferias
+          o en persona, con una charla de por medio.
+        </p>
+        <p class="reveal quien-firma">
+          Porque el mate no se apura: se disfruta, se comparte y, cuando encontrás
+          el bueno, te quedás.
+        </p>
       </div>
     </div>
   </section>
@@ -767,8 +865,8 @@ h1, h2, h3, h4 { font-family: var(--font-serif); font-weight: 600; line-height: 
           <h2>Un recorrido real,<br />sin intermediarios</h2>
         </div>
         <p class="origen-intro reveal">
-          De la hoja a tu ronda de mates. Así viaja nuestra yerba: elegida a mano,
-          fraccionada a pulso y cebada sin apuro. Con las manos y a la vista.
+          De la hoja a tu ronda de mates. Así viaja nuestra yerba: elegida con criterio,
+          fraccionada a pulso y cebada sin apuro.
         </p>
       </header>
 
@@ -777,7 +875,7 @@ h1, h2, h3, h4 { font-family: var(--font-serif); font-weight: 600; line-height: 
         <div class="essay-row">
           <figure class="essay-fig fig-wide essay-fade kb-fig">
             <img src="img/moliendas.jpg" width="900" height="1600" alt="Bolsas abiertas con distintas moliendas de yerba agroecológica" loading="lazy" />
-            <figcaption><span class="folio">01</span><span>La selección — distintas moliendas, elegidas a mano.</span></figcaption>
+            <figcaption><span class="folio">01</span><span>La selección — distintas moliendas, elegidas con criterio.</span></figcaption>
           </figure>
           <figure class="essay-fig fig-narrow essay-fade kb-fig">
             <img src="img/feria-2.jpg" width="900" height="1600" alt="Puesto de Rumbo Matero en la feria de Córdoba" loading="lazy" />
@@ -805,91 +903,10 @@ h1, h2, h3, h4 { font-family: var(--font-serif); font-weight: 600; line-height: 
           </figure>
           <figure class="essay-fig fig-narrow essay-fade kb-fig">
             <img src="img/paquete-envasado.jpg" width="900" height="1600" alt="Bolsa de yerba Rumbo Matero envasada" loading="lazy" />
-            <figcaption><span class="folio">06</span><span>Fresca y lista — la probás y no hay vuelta atrás.</span></figcaption>
+            <figcaption><span class="folio">06</span><span>Fresca y lista — envasada para tu próxima ronda.</span></figcaption>
           </figure>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- ===================== NUESTRAS YERBAS (carta / variedades) ===================== -->
-  <section class="section yerbas" id="yerbas">
-    <div class="container">
-      <header class="yerbas-head">
-        <div class="reveal">
-          <p class="eyebrow">Nuestras yerbas</p>
-          <h2>Una carta agroecológica</h2>
-        </div>
-        <p class="yerbas-intro reveal">
-          Elegí molienda, cuerpo y perfil. Tres familias, según cómo se seca y se
-          muele la hoja. Todas agroecológicas, todas con el mismo cuidado.
-        </p>
-      </header>
-
-      <!-- Familia 1 -->
-      <article class="familia reveal">
-        <figure class="familia-photo">
-          <img src="img/hoja-con-palo.jpg" width="1200" height="1600" alt="Yerba barbacuá con palo, molida" loading="lazy" />
-        </figure>
-        <div class="familia-body">
-          <div class="familia-title">
-            <h3>Barbacuá <span>con palo</span></h3>
-            <span class="familia-price">$7.200 – $7.400 <em>/ kg</em></span>
-          </div>
-          <p class="familia-desc">Secado a la barbacuá, con palo. La línea más clásica, con distintas moliendas y cortes de hierbas.</p>
-          <ul class="variedades">
-            <li><span class="v-name">Tradicional</span><span class="v-dot"></span><span class="v-price">$7.200</span></li>
-            <li><span class="v-name">Tradicional entrefina</span><span class="v-dot"></span><span class="v-price">$7.200</span></li>
-            <li><span class="v-name">Tradicional con cedrón</span><span class="v-dot"></span><span class="v-price">$7.400</span></li>
-            <li class="v-off"><span class="v-name">Tradicional con cola de caballo</span><span class="v-dot"></span><span class="v-price">sin stock</span></li>
-            <li><span class="v-name">Canchada fina</span><span class="v-dot"></span><span class="v-price">$7.200</span></li>
-            <li><span class="v-name">Con hojas de naranja</span><span class="v-dot"></span><span class="v-price">$7.400</span></li>
-            <li><span class="v-name">Digestiva <small>· palta, marcela y té verde</small></span><span class="v-dot"></span><span class="v-price">$7.400</span></li>
-          </ul>
-        </div>
-      </article>
-
-      <!-- Familia 2 -->
-      <article class="familia familia-alt reveal">
-        <figure class="familia-photo">
-          <img src="img/hoja-despalada.jpg" width="900" height="1600" alt="Yerba barbacuá despalada, molida sin palo" loading="lazy" />
-        </figure>
-        <div class="familia-body">
-          <div class="familia-title">
-            <h3>Barbacuá <span>despalada</span></h3>
-            <span class="familia-price">$8.200 <em>/ kg</em></span>
-          </div>
-          <p class="familia-desc">Sin palo, secado a la barbacuá. Más limpia en el mate; de suave a intensa según la molienda.</p>
-          <ul class="variedades">
-            <li><span class="v-name">Gruesa <small>· suave</small></span><span class="v-dot"></span><span class="v-price">$8.200</span></li>
-            <li><span class="v-name">Mediana <small>· suave</small></span><span class="v-dot"></span><span class="v-price">$8.200</span></li>
-            <li><span class="v-name">Intensa fina</span><span class="v-dot"></span><span class="v-price">$8.200</span></li>
-          </ul>
-        </div>
-      </article>
-
-      <!-- Familia 3 -->
-      <article class="familia reveal">
-        <figure class="familia-photo">
-          <img src="img/paquete-hierbas.jpg" width="960" height="1280" alt="Yerba de secado tradicional, sin ahumar" loading="lazy" />
-        </figure>
-        <div class="familia-body">
-          <div class="familia-title">
-            <h3>Secado <span>tradicional</span></h3>
-            <span class="familia-price">$7.200 – $8.000 <em>/ kg</em></span>
-          </div>
-          <p class="familia-desc">Secado tradicional, con opciones sin ahumar. Un perfil más suave y natural.</p>
-          <ul class="variedades">
-            <li><span class="v-name">Volvedora despalada <small>· suave</small></span><span class="v-dot"></span><span class="v-price">$8.000</span></li>
-            <li><span class="v-name">Tradicional sin ahumar</span><span class="v-dot"></span><span class="v-price">$7.200</span></li>
-            <li><span class="v-name">Entrefina sin ahumar</span><span class="v-dot"></span><span class="v-price">$7.200</span></li>
-          </ul>
-        </div>
-      </article>
-
-      <p class="yerbas-foot reveal">
-        Todos los precios son por kilo. Consultá presentaciones, packs y venta por mayor.
-      </p>
     </div>
   </section>
 
@@ -901,7 +918,7 @@ h1, h2, h3, h4 { font-family: var(--font-serif); font-weight: 600; line-height: 
       <blockquote>
         “El mate no es solo lo que tomamos.<br />Es cómo, con quién y desde dónde.”
       </blockquote>
-      <p class="experience-sub">El mate se disfruta, no se apura. Ese es el cambio de rumbo.</p>
+      <p class="experience-sub">El mate se disfruta, no se apura. Eso también se elige.</p>
     </div>
   </section>
 
@@ -922,7 +939,7 @@ h1, h2, h3, h4 { font-family: var(--font-serif); font-weight: 600; line-height: 
         </figure>
         <figure class="quote">
           <div class="stars" aria-label="5 de 5 estrellas">★★★★★</div>
-          <blockquote>No me genera acidez, y eso lo noté desde el primer mate.</blockquote>
+          <blockquote>La siento mucho más suave, sin esa acidez que tenía con la de antes.</blockquote>
           <figcaption><span class="q-name">Martín</span><span class="q-loc">Alta Gracia</span></figcaption>
         </figure>
         <figure class="quote">
@@ -949,8 +966,8 @@ h1, h2, h3, h4 { font-family: var(--font-serif); font-weight: 600; line-height: 
 
       <div class="faq">
         <details class="faq-item reveal">
-          <summary>¿Por qué no genera acidez?</summary>
-          <div class="faq-body"><p>Porque es agroecológica, sin agrotóxicos ni los procesos de la yerba industrial que suelen provocar esa acidez. La mayoría lo nota desde el primer mate: por eso decimos que no tiene vuelta atrás.</p></div>
+          <summary>¿Es verdad que se siente más suave?</summary>
+          <div class="faq-body"><p>Es lo que más nos comparten quienes se pasan: al ser agroecológica y sin los procesos de la yerba industrial, muchos la sienten más suave y con menos acidez. Cada cuerpo es distinto, pero ese es el comentario más repetido.</p></div>
         </details>
         <details class="faq-item reveal">
           <summary>¿Qué significa que la yerba sea agroecológica?</summary>
@@ -1090,15 +1107,16 @@ h1, h2, h3, h4 { font-family: var(--font-serif); font-weight: 600; line-height: 
           <img class="brand-logo" src="img/logo.png" alt="Rumbo Matero" width="40" height="40" />
           <span class="brand-text"><strong>Rumbo Matero</strong><em>Yerba Agroecológica</em></span>
         </a>
-        <p class="footer-desc">Yerba mate agroecológica, sin agrotóxicos y sin acidez. La elegimos con criterio y te la acercamos como se merece. Cambiá el rumbo de tu mate.</p>
+        <p class="footer-desc">Yerba mate agroecológica, sin agrotóxicos. La elegimos en origen y te la acercamos a Córdoba como se merece. Cambiá el rumbo de tu mate.</p>
       </div>
 
       <div class="footer-col">
         <h4>Explorar</h4>
         <a href="#nuestra-yerba">La yerba</a>
+        <a href="#motivos">Por qué</a>
+        <a href="#yerbas">Nuestras yerbas</a>
         <a href="#quien-soy">Quién soy</a>
         <a href="#origen">El origen</a>
-        <a href="#yerbas">Nuestras yerbas</a>
         <a href="#reserva">Reservá tu pedido</a>
       </div>
 
